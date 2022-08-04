@@ -188,7 +188,7 @@ a.active-link {
 /* Servicios */
 
 .services{
-  background-color: rgb(255 230 167 / 10%)
+  background-color: var(--gray-light-color);
 }
 
 .services-paragraph {
@@ -203,7 +203,7 @@ a.active-link {
   padding: 1rem;
   text-align: center;
   background-color: var(--gray-light-color);
-  border: 1px solid transparent;
+  box-shadow: 0px 2px 8px 2px #05162217;
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -227,8 +227,7 @@ a.active-link {
 }
 
 .service-card:hover{
-  box-shadow: 0px 4px 16px 4px #05162217;
-  border: 1px solid var(--gray-color);
+  background-color: #ffffff;
 }
 
 .service-card i{
@@ -245,6 +244,37 @@ a.active-link {
 .container-about p {
   font-size: calc(1rem + 0.25vw);
   line-height: calc(1.75rem + 0.75vw);
+}
+
+.container-img {
+  display: none
+}
+
+@media screen and (min-width: 768px){
+
+  .grid-2-columns{
+    max-width: var(--max-width);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+  .container-img{
+    max-width: 700px;
+    display: block;
+  }
+
+  .container-img img{
+    object-fit: cover;
+    height: 100%;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: filter 0.1s ease;
+  }
+
+  .container-img img:hover{
+    filter: grayscale(0%);
+  }
+
 }
 
 @media screen and (min-width: 1024px){
@@ -281,6 +311,73 @@ a.active-link {
     text-decoration: underline wavy var(--second-color) 0.10rem;
     text-underline-offset: 0.15rem;
     color: var(--gray-light-color);
+  }
+}
+
+/* Slogan */
+.slogan{
+  width: 100%;
+  background-image:var(--image-slogan) ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  /* height: 100%; */
+}
+
+.slogan-image-opacity{
+  background-color: var(--first-alpha-color);
+}
+
+.slogan h2{
+  text-align: center;
+  color: var(--gray-light-color);
+  padding: calc(4rem + 4vw) 1rem;
+  max-width: 780px;
+  margin: 0 auto;
+  font-weight: 200;
+  font-style: italic;
+  font-size: calc(1rem + 0.5vw);
+}
+
+/* ***** Form content ***** */
+
+.contact{
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.form-container{
+  padding: 1rem;
+  color: var(--first-color);
+}
+
+.form-label{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  font-weight: bold;
+}
+
+.form-label input, .form-label textarea{
+  padding: 1rem;
+  border: 1px solid lightgray;
+  font-family: var(--font);
+}
+
+@media screen and (min-width:768px) {
+
+  .contact{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-content img{
+    display: block;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -363,6 +460,7 @@ a.active-link {
   justify-content: center;
   padding:1rem;
   backdrop-filter: blur(8px);
+  z-index: 9999;
 }
 .wpp-btn i{
   font-size: 2rem;
@@ -418,10 +516,6 @@ a.active-link {
     position: sticky;
     padding: 0.5rem;
     height: calc(var(--header-height) - 0.5rem);
-  }
-
-  .container-about {
-    width: 780px;
   }
 
   .services>.container {

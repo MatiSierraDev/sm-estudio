@@ -55,17 +55,18 @@ const $ = (selector) => document.querySelector(`${selector}`);
 ((d, $) => {
 
   const observer = new IntersectionObserver(handleInterceptionObserver, {
-    threshold: 0.10
+    threshold: 0.20
   });
 
-  const $scrollTrackerElement = d.getElementById('nosotros');
+  const $scrollTrackerElement = d.getElementById('inicio');
   observer.observe($scrollTrackerElement);
 
   function handleInterceptionObserver(entries) {
     entries.forEach(entry => {
+      console.log(entry)
       const $socialIcons = d.querySelector('.social');
 
-      if (entry.intersectionRatio > 0) {
+      if (!entry.isIntersecting) {
         $socialIcons.firstElementChild.classList.remove('none');
         $socialIcons.firstElementChild.classList.add('social-contact');
       } else {
