@@ -63,7 +63,7 @@ const $ = (selector) => document.querySelector(`${selector}`);
 
   function handleInterceptionObserver(entries) {
     entries.forEach(entry => {
-      console.log(entry)
+      // console.log(entry)
       const $socialIcons = d.querySelector('.social');
 
       if (!entry.isIntersecting) {

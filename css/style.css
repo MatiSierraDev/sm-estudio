@@ -75,6 +75,10 @@ html {
   box-sizing: inherit;
 }
 
+::selection {
+  background-color: var(--second-color);
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -411,6 +415,10 @@ a.active-link {
   font-family: var(--font);
 }
 
+.form-label input[type="submit"] {
+  cursor: pointer;
+}
+
 @media screen and (min-width:768px) {
 
   .contact {
@@ -434,6 +442,7 @@ a.active-link {
   background-color: var(--first-color);
   color: #ffff;
   max-width: 100%;
+  margin-top: 1rem;
 }
 
 .footer-content {
@@ -463,9 +472,19 @@ a.active-link {
   text-align: center;
   text-decoration: none;
   padding: 1rem;
-  border-radius: 1.5rem;
-  background-color: var(--first-color);
+  margin: 0 auto;
+}
+
+.btn-color {
   color: var(--gray-light-color);
+  background-color: var(--first-color);
+  border: 1px solid rgb(136 136 136);
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .8;
+  border: 1px solid var(--second-color);
 }
 
 .container {
