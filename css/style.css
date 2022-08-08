@@ -1,40 +1,25 @@
-/* Fonts */
-/* latin */
 @font-face {
-  font-family: 'PT Serif';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(../fonts/PTSerif-Italic.ttf) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
-}
-
-@font-face {
-  font-family: 'PT Serif';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url(../fonts/PTSerif-700-Italic.ttf) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
-}
-
-@font-face {
-  font-family: 'PT Serif';
+  font-family: 'Barlow regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(../fonts/PTSerif-Regular.ttf) format('woff2');
+  src: url('../fonts/Barlow-Regular.ttf') format('ttf'),
+    url('../fonts/Barlow-Regular.ttf') format('truetype'),
+    url('../fonts/Barlow-Regular.eot') format('embedded-opentype');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
 }
 
 @font-face {
-  font-family: 'PT Serif';
+  font-family: 'Barlow Black';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   font-display: swap;
-  src: url(../fonts/PTSerif-Bold.ttf) format('woff2');
+  src: url('../fonts/Barlow-Black.ttf') format('ttf'),
+    url('../fonts/Barlow-Black.ttf') format('truetype'),
+    url('../fonts/Barlow-Black.eot') format('embedded-opentype');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
 }
+
 
 /* custom properties */
 :root {
@@ -53,7 +38,8 @@
   --gray-dark-color: #666;
   --black-color: #000;
   --text-color: #222;
-  --font: 'PT Serif', sans-serif;
+  --font-barlow-black: 'Barlow Black', sans-serif;
+  --font-barlow-regular: 'Barlow regular', sans-serif;
   --max-width: 1200px;
   --header-height: 4rem;
 }
@@ -63,7 +49,7 @@
 /* modelo de caja desde el borde ancho y altura */
 html {
   box-sizing: border-box;
-  font-family: var(--font);
+  font-family: var(--font-barlow-regular);
   font-size: 16px;
   scroll-behavior: smooth;
 }
@@ -175,6 +161,8 @@ p {
 .hero-image-title {
   font-size: calc(1.5rem + 2vw);
   font-weight: bold;
+  font-family: var(--font-barlow-black);
+  text-transform: uppercase;
 }
 
 .hero-image-subtitle {
@@ -258,7 +246,8 @@ a.active-link {
 
 .container-title {
   font-size: calc(1.25rem + .75vw);
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
+  font-family: var(--font-barlow-black);
   font-weight: bold;
   text-align: center;
   margin: 2rem 0;
@@ -412,6 +401,7 @@ a.active-link {
 
 .form-label input,
 .form-label textarea {
+  margin-top: 1rem;
   padding: 1rem;
   border: 1px solid lightgray;
   font-family: var(--font);
@@ -483,7 +473,7 @@ a.active-link {
 
 .footer hr {
   max-width: var(--max-width);
-  border: 0.1px solid #666;
+  border: 0.1px solid #6666664d;
 }
 
 .footer small {
@@ -559,6 +549,7 @@ a.active-link {
   color: var(--gray-light-color);
   font-size: 1.5rem;
   font-weight: bold;
+  font-family: var(--font-barlow-black);
 }
 
 .social-contact {
