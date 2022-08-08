@@ -42,9 +42,10 @@
   /* --first-color: #051622; */
   /* --first-alpha-color: rgba(8, 37, 57, 0.75); */
   /* --second-color: #1BA098; */
-  --first-color: #252422;
-  --first-alpha-color: rgb(37, 36, 34, 0.75);
-  --second-color: #99582a;
+  --first-color: #02414C;
+  /* --first-alpha-color: rgb(37, 36, 34, 0.75); */
+  --first-alpha-color: rgb(73, 180, 140, 0.75);
+  --second-color: #B8CE25;
   --second-alpha-color: rgb(255, 230, 168, 0.75);
   --link-color: #DEB992;
   --link-alpha-color: rgba(222, 185, 146, 0.75);
@@ -397,6 +398,8 @@ a.active-link {
 }
 
 .form-container {
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
   padding: 1rem;
   color: var(--first-color);
 }
@@ -418,6 +421,29 @@ a.active-link {
 .form-label input[type="submit"] {
   cursor: pointer;
 }
+
+.form-container *::placeholder {
+  color: var(--first-color);
+}
+
+.form-label [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+
+.form-label [required]:valid {
+  border: thin solid var(--form-ok-color);
+}
+
+.form-label input:focus-visible,
+.form-label textarea:focus-visible {
+  outline: none;
+  background-color: rgb(249, 245, 245);
+}
+
+.form-loader {
+  text-align: center;
+}
+
 
 @media screen and (min-width:768px) {
 

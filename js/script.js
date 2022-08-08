@@ -76,5 +76,35 @@ const $ = (selector) => document.querySelector(`${selector}`);
     });
   }
 
+})(document, $);
 
-})(document, $)
+
+//Formulario
+((d, $) => {
+  d.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(e)
+    if (e.target.matches('form')) {
+
+      const $spinner = $('.form-loader')
+      const $submit = $('.form-container .btn-color')
+      const $labels = d.querySelectorAll('.form-label')
+
+      $submit.style.cursor = 'no-drop';
+
+      $spinner.classList.remove('none');
+
+      $labels.forEach((item) => {
+        const $patter = item.firstElementChild.pattern || item.firstElementChild.pattern;
+        debugger
+
+        item.firstElementChild.value = ''
+      })
+
+      setTimeout(() => {
+        $spinner.classList.add('none');
+        $submit.style.cursor = 'pointer';
+      }, 100);
+    }
+  });
+})(document, $);
