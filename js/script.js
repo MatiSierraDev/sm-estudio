@@ -96,7 +96,7 @@ const $ = (selector) => document.querySelector(`${selector}`);
 
       $labels.forEach((item) => {
         const $patter = item.firstElementChild.pattern || item.firstElementChild.pattern;
-        debugger
+        // debugger
 
         item.firstElementChild.value = ''
       })
