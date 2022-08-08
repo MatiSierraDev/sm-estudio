@@ -43,12 +43,11 @@
   /* --first-alpha-color: rgba(8, 37, 57, 0.75); */
   /* --second-color: #1BA098; */
   --first-color: #02414C;
-  /* --first-alpha-color: rgb(37, 36, 34, 0.75); */
-  --first-alpha-color: rgb(73, 180, 140, 0.75);
-  --second-color: #B8CE25;
-  --second-alpha-color: rgb(255, 230, 168, 0.75);
-  --link-color: #DEB992;
-  --link-alpha-color: rgba(222, 185, 146, 0.75);
+  --first-alpha-color: rgb(2, 65, 76, 0.75);
+  --second-color: #49B48C;
+  --second-alpha-color: rgb(73, 180, 140, 0.75);
+  --link-color: #02414C;
+  --link-alpha-color: rgb(2, 65, 76, 0.75);
   --gray-light-color: #f3f3f3;
   --gray-color: #ccc;
   --gray-dark-color: #666;
@@ -92,9 +91,9 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
   color: var(--link-alpha-color);
-}
+} */
 
 h1 {
   margin: 0;
@@ -153,7 +152,7 @@ p {
 }
 
 .hero-image-opacity {
-  background-color: var(--first-alpha-color);
+  background-color: rgb(34 34 34 / 84%);
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -499,18 +498,16 @@ a.active-link {
   text-decoration: none;
   padding: 1rem;
   margin: 0 auto;
-}
-
-.btn-color {
-  color: var(--gray-light-color);
+  transform: scale(1);
+  transition: transform ease-in-out 100ms;
   background-color: var(--first-color);
-  border: 1px solid rgb(136 136 136);
-  cursor: pointer;
+  color: #fff;
+  border-style: none;
 }
 
 .btn:hover {
   opacity: .8;
-  border: 1px solid var(--second-color);
+  transform: scale(1.1);
 }
 
 .container {
