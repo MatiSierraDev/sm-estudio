@@ -88,17 +88,27 @@ const $ = (selector) => document.querySelector(`${selector}`);
 
       const $spinner = $('.form-loader')
       const $submit = $('.form-container .btn-color')
-      const $labels = d.querySelectorAll('.form-label')
+      const $labels = d.querySelectorAll('.form-label [required]')
 
       $submit.style.cursor = 'no-drop';
 
       $spinner.classList.remove('none');
 
+
+
       $labels.forEach((item) => {
-        const $patter = item.firstElementChild.pattern || item.firstElementChild.pattern;
+        const $pattern = item.pattern || item.pattern;
+
+        //create message
+        const $span = d.createElement('span');
+        $span.textContent = item.title;
+        $span.classList.add('form-message-error')
+
+        item.insertAdjacentElement('afterend', $span)
         // debugger
 
-        item.firstElementChild.value = ''
+        //reset form
+        item.value = ''
       })
 
       setTimeout(() => {

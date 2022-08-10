@@ -433,6 +433,26 @@ a.active-link {
   text-align: center;
 }
 
+.form-message-error {
+  color: var(--form-error-color);
+  font-size: 0.85rem;
+  font-family: var(--font-barlow-regular);
+  font-weight: 100;
+  animation-name: message-error;
+  animation-duration: 2s;
+}
+
+/* animation fror message form */
+@keyframes message-error {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 
 @media screen and (min-width:768px) {
 
