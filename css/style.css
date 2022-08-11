@@ -124,7 +124,7 @@ p {
 /* ***** Components ***** */
 /* Hero image */
 .hero-image {
-  background-image: url('../img/img-hero.png');
+  background-image: var(--image);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: var(--attachment);
