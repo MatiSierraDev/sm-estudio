@@ -244,6 +244,20 @@ a.active-link {
   cursor: pointer;
 }
 
+.service-content-img{
+  height: 300px;
+}
+
+.service-content-img img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.service-content-info{
+  padding: 1rem 0;
+}
+
 .container-title {
   font-size: calc(1.25rem + .75vw);
   text-transform: uppercase;
@@ -622,10 +636,6 @@ a.active-link {
     justify-content: center;
     align-items: flex-start;
     gap: 1rem;
-  }
-
-  .container-title {
-    margin-bottom: 0;
   }
 
 }
